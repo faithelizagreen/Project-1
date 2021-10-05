@@ -2,24 +2,101 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Take A Hike</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="./css/materialize/css/materialize.css"  media="screen,projection"/>
-    <link rel ="stylesheet" href="css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Take A Hike</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="./css/materialize/css/materialize.css" media="screen,projection" />
+  <!-- Import custom css -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <img class=appLogo src="tbd" alt="take a hike logo">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Jumbotron/Hero -->
+  <section class="jumbotron">
+        <div class="container row">
+            <div class="col s12">
+              <img class="hero responsive-img" src="Assets/images/frontpageimage.jpeg">
+              <!-- Modal button -->
+              <div class="buttons-wrapper">
+                <div class="row center">
+                  <a href="#hike" class="btn-large waves-effect waves-light brown lighten-3">Take a Hike</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+  <div class="modal" id="hike">
+    Test
+  </div>
+</div>
 
 
-    <!-- Compressed JavaScript -->
-    <script type="text/javascript" src="./css/materialize/js/materialize.js"></script>
-    <!--<script async
+
+  <div class="container row">
+    <img class="aboutImg col s6 z-depth" src="Assets/images/frontpageimage.jpeg">
+    <h5>About</h5>
+    <p>
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. 
+    </p>
+    <p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </p>
+  </div>
+
+  <footer class="page-footer z-depth-2">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="white-text center">Developed By:</h5>
+          <div class="col s4">
+            <h6 class="center gray-text" id="name">Faith Green</h6>
+            <a href="https://github.com/faithelizagreen">
+              <p class="grey-text text-lighten-4 center">github.com/faithelizagreen</p>
+            </a>
+          </div>
+          <div class="col s4">
+            <h6 class="center white-text" id="name">Jessica Galarza</h6>
+            <a href="https://github.com/jessica9410">
+              <p class="grey-text text-lighten-4 center">github.com/jessica9410</p>
+            </a>
+          </div>
+          <div class="col s4">
+            <h6 class="center white-text" id="name">Leah Davis</h6>
+            <a href="https://github.com/luminescify">
+              <p class="grey-text text-lighten-4 center">github.com/luminescify</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Compressed JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="./css/materialize/js/materialize.js"></script>
+  
+  <!--<script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs094KFbn1VNf7g8NEjgVeCZapYcbfT08&callback=initMap">
     </script>-->
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
