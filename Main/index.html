@@ -5,6 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Take A Hike</title>
+
+  <link rel="shortcut icon" type="image/jpg" href="./Assets/images/mountain.png"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="./css/materialize/css/materialize.css" media="screen,projection" />
@@ -27,53 +29,42 @@
 
 
   <!-- Jumbotron/Hero -->
-  <section class="jumbotron">
-    <div class="container row">
-      <div class="col s12">
+<div class = "col s12">
+    <section class="jumbotron">
         <img class="hero responsive-img" src="Assets/images/heroimage.jpeg">
         <!-- Modal Trigger -->
-        <div class="buttons-wrapper">
-          <div class="row center">
+        <div class="center buttons-wrapper">
             <button href="#demo-modal" class="btn-large waves-effect waves-light brown lighten-3 modal-trigger">Take a
               Hike</button>
-          </div>
-          </div>
         </div>
-    </div>
-          <!-- Modal Structure -->
-          <div id="demo-modal" class="modal">
+
+        <!-- Modal Structure -->
+        <div id="demo-modal" class="modal">
             <div class="modal-content">
-              <div id="modalHead" class="row"> 
-                <h6>
-                  Enter your desired hiking location
-                </h6>
-                <div class="row">
+              <div id="modal-head" class="row"> 
+                <h5> Enter your desired hiking location </h5>
+              </div>
+              <div class="row">
                   <form class="col s12">
-                    <div class="row">
+                      <div class="input-field col s12">
+                          <input id="city-and-state" type="text" class="validate"></input>
+                          <label for="location">City and State </label>
+                      </div>
                       <div class="input-field col s6">
-                        <input placeholder="Please enter City and State" id="cityName" type="text" class="validate ">
-                        </inpout>
-                        <label for="location">
-                          <h5>
-                            City and State
-                          </h5>
-                        </label>
-                        <div class="form-floating">
-                          <!-- floating Selector for choose your level-->
-                          <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option selected>Choose your level</option>
-                            <option value="1">Easy- 1-5 miles with easy terrain and little elevation gain</option>
-                            <option value="2">Moderate 5-10 miles with moderate terrain and some elevation change
-                            </option>
-                            <option value="3">Difficult 10-20 miles</option>
-                            <option value="3">Challenging 20-30 miles</option>
+                        <!-- Choose your desired difficulty-->
+                          <select class="form-select">
+                            <option value="" disabled selected>Choose your level</option>
+                            <option value="1">Easy - 1-5 miles with easy terrain and little elevation gain</option>
+                            <option value="2">Moderate - 5-10 miles with moderate terrain and some elevation change</option>
+                            <option value="3">Difficult - 10-20 miles</option>
+                            <option value="4">Challenging - 20-30 miles</option>
                           </select>
                           <label for="floatingSelect"> Max Difficulty Level</label>
-                        </div>
+                      </div>
 
-                        <div class="form-floating">
-                          <!-- floating Selector for Choose your length-->
-                          <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                      <div class="input-field col s6">
+                        <!-- Choose your desired hike length -->
+                          <select class="form-select">
                             <option selected>Choose your length</option>
                             <option value="1">1-5 miles</option>
                             <option value="2">5-10 miles</option>
@@ -81,7 +72,15 @@
                             <option value="3">20-30 miles</option>
                           </select>
                           <label for="floatingSelect"> Max Trail Length</label>
-                        </div>
+                      </div>
+              </div>
+              <a href="searchresults.html"><button class="modal-button waves-effect waves-light btn">Submit</button></a>
+            </div>
+        </div>
+    </section>
+</div>
+    <section>
+               </div>
                       </div>
                     </div>
                     <button>Submit</button>
@@ -108,7 +107,10 @@
             laborum."
           </p>
         </div>
+    </section>
+
   </section>
+
         <footer class="page-footer z-depth-2">
           <div class="container">
             <div class="row">

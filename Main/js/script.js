@@ -8,6 +8,12 @@ $(document).ready(function () {
 });
 
 
+// Modal Selectors
+$(document).ready(function(){
+    $('select').formSelect();
+  });
+
+
 // NPS Api
 var queryURL = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateName + "&api_key=" + npsKey;
 fetch(queryURL)
