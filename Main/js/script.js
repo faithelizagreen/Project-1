@@ -7,6 +7,7 @@ $(document).ready(function () {
   $(".modal").modal();
 });
 
+
 // Modal Selectors
 $(document).ready(function(){
     $('select').formSelect();
