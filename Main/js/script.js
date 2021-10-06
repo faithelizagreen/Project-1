@@ -10,3 +10,7 @@ fetch(queryURL)
     .then(function (data) {
         console.log(data);
     })
+
+    $(document).ready(function(){
+        $('.modal').modal();
+      });

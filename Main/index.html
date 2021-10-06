@@ -24,79 +24,131 @@
     </div>
   </nav>
 
+  <div class="container">
+    <!-- Modal Structure -->
+
+
+  </div>
+
   <!-- Jumbotron/Hero -->
   <section class="jumbotron">
-        <div class="container row">
-            <div class="col s12">
-              <img class="hero responsive-img" src="Assets/images/frontpageimage.jpeg">
-              <!-- Modal button -->
-              <div class="buttons-wrapper">
-                <div class="row center">
-                  <a href="#hike" class="btn-large waves-effect waves-light brown lighten-3">Take a Hike</a>
+    <div class="container row">
+      <div class="col s12">
+        <img class="hero responsive-img" src="Assets/images/heroimage.jpeg">
+        <!-- Modal Trigger -->
+        <div class="buttons-wrapper">
+          <div class="row center">
+            <button href="#demo-modal" class="btn-large waves-effect waves-light brown lighten-3 modal-trigger">Take a
+              Hike</button>
+          </div>
+          </div>
+        </div>
+    </div>
+          <!-- Modal Structure -->
+          <div id="demo-modal" class="modal">
+            <div class="modal-content">
+              <div id="modalHead" class="row"> 
+                <h6>
+                  Enter your desired hiking location
+                </h6>
+                <div class="row">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input placeholder="Please enter City and State" id="cityName" type="text" class="validate ">
+                        </inpout>
+                        <label for="location">
+                          <h5>
+                            City and State
+                          </h5>
+                        </label>
+                        <div class="form-floating">
+                          <!-- floating Selector for choose your level-->
+                          <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>Choose your level</option>
+                            <option value="1">Easy- 1-5 miles with easy terrain and little elevation gain</option>
+                            <option value="2">Moderate 5-10 miles with moderate terrain and some elevation change
+                            </option>
+                            <option value="3">Difficult 10-20 miles</option>
+                            <option value="3">Challenging 20-30 miles</option>
+                          </select>
+                          <label for="floatingSelect"> Max Difficulty Level</label>
+                        </div>
+
+                        <div class="form-floating">
+                          <!-- floating Selector for Choose your length-->
+                          <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>Choose your length</option>
+                            <option value="1">1-5 miles</option>
+                            <option value="2">5-10 miles</option>
+                            <option value="3">10-20 miles</option>
+                            <option value="3">20-30 miles</option>
+                          </select>
+                          <label for="floatingSelect"> Max Trail Length</label>
+                        </div>
+                      </div>
+                    </div>
+                    <button>Submit</button>
                 </div>
+              </div>
             </div>
+          </div>
+    </section>
+
+
+        <div class="container row">
+          <img class="aboutImg col s6 z-depth" src="Assets/images/frontpageimage.jpeg">
+          <h5>About</h5>
+          <p>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat.
+          </p>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum."
+          </p>
         </div>
-    </div>
-</section>
-
-<div class="container">
-  <div class="modal" id="hike">
-    Test
-  </div>
-</div>
-
-
-
-  <div class="container row">
-    <img class="aboutImg col s6 z-depth" src="Assets/images/frontpageimage.jpeg">
-    <h5>About</h5>
-    <p>
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. 
-    </p>
-    <p>
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    </p>
-  </div>
-
-  <footer class="page-footer z-depth-2">
-    <div class="container">
-      <div class="row">
-        <div class="col s12">
-          <h5 class="white-text center">Developed By:</h5>
-          <div class="col s4">
-            <h6 class="center gray-text" id="name">Faith Green</h6>
-            <a href="https://github.com/faithelizagreen">
-              <p class="grey-text text-lighten-4 center">github.com/faithelizagreen</p>
-            </a>
+  </section>
+        <footer class="page-footer z-depth-2">
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <h5 class="white-text center">Developed By:</h5>
+                <div class="col s4">
+                  <h6 class="center gray-text" id="name">Faith Green</h6>
+                  <a href="https://github.com/faithelizagreen">
+                    <p class="grey-text text-lighten-4 center">github.com/faithelizagreen</p>
+                  </a>
+                </div>
+                <div class="col s4">
+                  <h6 class="center white-text" id="name">Jessica Galarza</h6>
+                  <a href="https://github.com/jessica9410">
+                    <p class="grey-text text-lighten-4 center">github.com/jessica9410</p>
+                  </a>
+                </div>
+                <div class="col s4">
+                  <h6 class="center white-text" id="name">Leah Davis</h6>
+                  <a href="https://github.com/luminescify">
+                    <p class="grey-text text-lighten-4 center">github.com/luminescify</p>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col s4">
-            <h6 class="center white-text" id="name">Jessica Galarza</h6>
-            <a href="https://github.com/jessica9410">
-              <p class="grey-text text-lighten-4 center">github.com/jessica9410</p>
-            </a>
-          </div>
-          <div class="col s4">
-            <h6 class="center white-text" id="name">Leah Davis</h6>
-            <a href="https://github.com/luminescify">
-              <p class="grey-text text-lighten-4 center">github.com/luminescify</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+        </footer>
 
-  <!-- Compressed JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="./css/materialize/js/materialize.js"></script>
-  
-  <!--<script async
+        <!-- Compressed JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="./css/materialize/js/materialize.js"></script>
+
+        <!--<script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs094KFbn1VNf7g8NEjgVeCZapYcbfT08&callback=initMap">
     </script>-->
-  <script src="js/script.js"></script>
+        <script src="js/script.js"></script>
 </body>
 
 </html>
