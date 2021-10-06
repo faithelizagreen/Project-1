@@ -2,18 +2,31 @@ var npsKey = 'jWkeYbbVnmq03Oy2hhCYC6rXV7GUQlVtL46HooYG';
 var rootUrl = 'https://developer.nps.gov/api/v1';
 var stateName = 'FL';
 
+// Modal
 $(document).ready(function () {
   $(".modal").modal();
 });
 
+
+// NPS Api
 var queryURL = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateName + "&api_key=" + npsKey;
 fetch(queryURL)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
+
+// resultspage
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+    })
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: {lat: -34.397, lng: 150.644 },
+        zoom: 8,
+    });
+}
+
 
 
 // Get the modal
@@ -41,3 +54,4 @@ fetch(queryURL)
 //         modal.style.display = "none";
 //     }
 // }
+

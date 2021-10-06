@@ -1,3 +1,31 @@
+/* resultspage */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  #map {
+      height: 900px;
+      width: 100%;
+      margin-top: 8px;
+  }
+
+  .git-link:hover {
+      color: #2e7d32;
+  }
+
+
+  .weather-card {
+    border: none;
+  }
+
+/* mainpage  */
+
 .nav-wrapper{
     background-color: rgb(82, 101, 77);
 }
@@ -18,6 +46,6 @@
 }
 
 .page-footer {
-    background-color: rgb(82, 101, 77);
+   background-color: rgb(82, 101, 77);
 }
 
