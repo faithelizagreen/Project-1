@@ -1,5 +1,4 @@
-/* resultspage */
-
+/* Results Page */
 body {
   display: flex;
   min-height: 100vh;
@@ -24,10 +23,14 @@ main {
   border: none;
 }
 
-/* mainpage  */
 
+/* Homepage */
 .nav-wrapper{
   background-color: rgb(82, 101, 77);
+}
+
+#hero-button {
+  font-size: 1vw;
 }
 
 .container {
@@ -47,12 +50,43 @@ main {
   transform: translate(0px, -300px);
 }
 
+.modal-size {
+  height: 500px;
+}
+
 #modal-head {
   margin-left: 10px;
 }
 
+.datepicker-modal {
+  width: 400px;
+}
+
+.picker_date-display {
+  margin: 60px;
+  width: 100px;
+  background-color: #4e342e;
+}
+
+.sage-text {
+  color: rgb(82, 101, 77);
+}
+
+.submit-btn {
+  background-color: #4e342e;
+}
+
+.submit-btn:hover {
+  background-color: #6e4a41;
+}
+
 .modal-button {
 margin-left: 10px;
+}
+
+.aboutImg {
+  margin-bottom: 40px;
+  margin-right: 20px;
 }
 
 .page-footer {
