@@ -89,12 +89,12 @@ $(document).ready(function () {
 
 
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: {
-            lat: -,
-            lng: 150.644,
-        },
-        zoom: 8,
-    });
-}
+// function initMap() {
+//     map = new google.maps.Map(document.getElementById("map"), {
+//         center: {
+//             lat: 
+//             lng: 150.644,
+//         },
+//         zoom: 8,
+//     });
+// }
