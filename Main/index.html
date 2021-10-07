@@ -2,144 +2,126 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Take A Hike</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Take A Hike</title>
 
-    <link rel="shortcut icon" type="image/jpg" href="./Assets/images/mountain.png" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="./css/materialize/css/materialize.css" media="screen,projection" />
-    <!-- Import custom css -->
-    <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" type="image/jpg" href="./Assets/images/mountain.png" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="./css/materialize/css/materialize.css" media="screen,projection" />
+  <!-- Import custom css -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body id="index">
 
-    <!-- Navbar -->
-    <nav>
-        <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo">
-                <img class=appLogo src="tbd" alt="take a hike logo">
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <img class="appLogo" src="" alt="take a hike logo">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Jumbotron/Hero -->
+  <div class="col s12">
+    <section class="jumbotron">
+      <img class="hero responsive-img" src="Assets/images/heroimage.jpeg">
+      <!-- Modal Trigger -->
+      <div class="center buttons-wrapper">
+        <button href="#demo-modal" id="hero-button"
+          class="btn-large waves-effect brown darken-3 z-index 2 modal-trigger">Take a Hike</button>
+      </div>
+
+      <!-- Modal Structure -->
+      <div id="demo-modal" class="modal modal-size">
+        <div class="modal-content">
+          <div id="modal-head" class="row">
+            <h2>We're thr<span class="sage-text">hill</span>ed to see you!</h2>
+            <p>Thanks for choosing to take your hike with us! Please enter your information below to receive
+              personalized information regarding your desired hiking location and the local weather for the date of your
+              choosing.</p>
+            <h5> Enter your desired hiking location: </h5>
+          </div>
+          <div class="row">
+            <form class="col s12">
+              <div class="input-field col s12">
+                <input id="city-and-state" type="text" class="validate"></input>
+                <label for="location">City and State </label>
+              </div>
+              <div class="col s6">
+                <!-- Choose the day you'd like to hike -->
+                <input type="text" class="datepicker custom-datepicker" placeholder="Select the first day of your hike">
+              </div>
+            </form>
+          </div>
+          <a href="searchresults.html"><button id="submit-button"
+              class="submit-btn modal-button waves-effect btn">Submit</button></a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="app-info" class="container">
+    <div class="row">
+      <img class="aboutImg col s6 z-depth" src="Assets/images/frontpageimage.jpeg">
+      <h4>About</h4>
+      <p>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo
+        consequat.
+      </p>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum."
+      </p>
+    </div>
+  </section>
+
+  <footer class="page-footer z-depth-2">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="white-text center">DEVELOPED BY</h5>
+          <div class="col s4">
+            <h6 class="center gray-text" id="name">Faith Green</h6>
+            <a href="https://github.com/faithelizagreen">
+              <p class="grey-text text-lighten-4 center">github.com/faithelizagreen</p>
             </a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-            </ul>
+          </div>
+          <div class="col s4">
+            <h6 class="center white-text" id="name">Jessica Galarza</h6>
+            <a href="https://github.com/jessica9410">
+              <p class="grey-text text-lighten-4 center">github.com/jessica9410</p>
+            </a>
+          </div>
+          <div class="col s4">
+            <h6 class="center white-text" id="name">Leah Davis</h6>
+            <a href="https://github.com/luminescify">
+              <p class="grey-text text-lighten-4 center">github.com/luminescify</p>
+            </a>
+          </div>
         </div>
-    </nav>
+      </div>
+  </footer>
 
+  <!-- Compressed JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="./css/materialize/js/materialize.js"></script>
 
-    <!-- Jumbotron/Hero -->
-    <div class="col s12">
-        <section class="jumbotron">
-            <img class="hero responsive-img" src="Assets/images/heroimage.jpeg">
-            <!-- Modal Trigger -->
-            <div class="center buttons-wrapper">
-                <button href="#demo-modal" class="btn-large waves-effect waves-light brown lighten-3 modal-trigger">Take a
-              Hike</button>
-            </div>
+<!-- Custom Javascript -->
 
-            <!-- Modal Structure -->
-            <div id="demo-modal" class="modal">
-                <div class="modal-content">
-                    <div id="modal-head" class="row">
-                        <h5> Enter your desired hiking location </h5>
-                    </div>
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="input-field col s12">
-                                <input id="city-and-state" type="text" class="validate"></input>
-                                <label for="location">City and State </label>
-                            </div>
-                            <div class="input-field col s6">
-                                <!-- Choose your desired difficulty-->
-                                <select class="form-select">
-                            <option value="" disabled selected>Choose your level</option>
-                            <option value="1">Easy - 1-5 miles with easy terrain and little elevation gain</option>
-                            <option value="2">Moderate - 5-10 miles with moderate terrain and some elevation change</option>
-                            <option value="3">Difficult - 10-20 miles</option>
-                            <option value="4">Challenging - 20-30 miles</option>
-                          </select>
-                                <label for="floatingSelect"> Max Difficulty Level</label>
-                            </div>
-
-                            <div class="input-field col s6">
-                                <!-- Choose your desired hike length -->
-                                <select class="form-select">
-                            <option selected>Choose your length</option>
-                            <option value="1">1-5 miles</option>
-                            <option value="2">5-10 miles</option>
-                            <option value="3">10-20 miles</option>
-                            <option value="3">20-30 miles</option>
-                          </select>
-                                <label for="floatingSelect"> Max Trail Length</label>
-                            </div>
-                    </div>
-                    <button class="modal-button waves-effect waves-light btn" id="search-button">Submit</button>
-                </div>
-            </div>
-        </section>
-    </div>
-    <section>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-    </section>
-
-
-    <div class="container row">
-        <img class="aboutImg col s6 z-depth" src="Assets/images/frontpageimage.jpeg">
-        <h5>About</h5>
-        <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </p>
-    </div>
-    </section>
-
-    </section>
-
-    <footer class="page-footer z-depth-2">
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <h5 class="white-text center">Developed By:</h5>
-                    <div class="col s4">
-                        <h6 class="center gray-text" id="name">Faith Green</h6>
-                        <a href="https://github.com/faithelizagreen">
-                            <p class="grey-text text-lighten-4 center">github.com/faithelizagreen</p>
-                        </a>
-                    </div>
-                    <div class="col s4">
-                        <h6 class="center white-text" id="name">Jessica Galarza</h6>
-                        <a href="https://github.com/jessica9410">
-                            <p class="grey-text text-lighten-4 center">github.com/jessica9410</p>
-                        </a>
-                    </div>
-                    <div class="col s4">
-                        <h6 class="center white-text" id="name">Leah Davis</h6>
-                        <a href="https://github.com/luminescify">
-                            <p class="grey-text text-lighten-4 center">github.com/luminescify</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Compressed JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="./css/materialize/js/materialize.js"></script>
-
-    <!--<script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs094KFbn1VNf7g8NEjgVeCZapYcbfT08&callback=initMap">
-    </script>-->
-    <script src="./js/index.js"></script>
+  <!-- <script src="js/script.js"></script> -->
+  <script src="js/map.js"></script>
+  <script src="./js/index.js"></script>
+  <!-- <script src="./js/resultsscript.js"></script> -->
 </body>
 
 </html>
