@@ -1,10 +1,9 @@
 let apiKey = '3d01b4e3041172e8bb324d16eafbdd67';
 let rootUrl = 'https://api.openweathermap.org';
 let submitBtn = document.getElementById('submit-button');
+let map;
 
 function getLatLon() {
-    // locationInput = document.querySelector('#city-and-state')
-    // let city = locationInput.value.trim();
     let city = localStorage.getItem("savedCity");
 
     let queryURL = rootUrl + '/geo/1.0/direct?q=' + city + '&limit=5&units=imperial&appid=' + apiKey;
@@ -17,7 +16,9 @@ function getLatLon() {
         })
         .then(function (data) {
             console.log(data)
+            initMap(data[0].lat, data[0].lon);
             getPlacesApi(data[0].lat, data[0].lon);
+
         })
 }
 
@@ -33,25 +34,31 @@ function getPlacesApi(lat, lon) {
             headers: {},
         })
         .then(function (response) {
+            console.log(response);
             return response.json();
         })
         .then(function (data) {
-            for(let i = 0; i < data.results.length; i++) {
+            for (let i = 0; i < data.results.length; i++) {
                 console.log(data.results[i].name)
-
-                // <div class="card small hoverable">
-                //   <div class="card-image">
-                //     <img src="https://www.arborday.org/images/hero/medium/hero-pine-forest-morning-light.jpg">
-                //   </div>
-                //   <div class="card-content">
-                //     <span class="card-title">Trail Name</span>
-                //     <p>Trail Location / Address </p>
-                //   </div>
-                // </div>
+                renderPlaces(data[0].results)
             }
+            data.results.forEach(place => {
+                console.log(place)
+
+                new google.maps.Marker({
+                    position: place.geometry.location,
+                    map,
+                    title: place.name,
+                });
+            });
 
         });
 }
+
+function renderPlaces() {
+    
+}
+
 
 if (submitBtn !== null) {
     submitBtn.addEventListener("click", function (event) {
@@ -68,7 +75,6 @@ if (submitBtn !== null) {
 $(document).ready(function () {
     if ($("body").is("#searchresults")) {
         getLatLon();
-        getPlacesApi();
     }
 })
 
@@ -87,14 +93,10 @@ $(document).ready(function () {
     }
 });
 
-
-
-// function initMap() {
-//     map = new google.maps.Map(document.getElementById("map"), {
-//         center: {
-//             lat: 
-//             lng: 150.644,
-//         },
-//         zoom: 8,
-//     });
-// }
+function initMap(lat, lon) {
+    let cord = new google.maps.LatLng(lat, lon)
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: cord,
+        zoom: 11,
+    });
+}
