@@ -1,31 +1,25 @@
-var npsKey = 'jWkeYbbVnmq03Oy2hhCYC6rXV7GUQlVtL46HooYG';
 var googleKey = 'AIzaSyBs094KFbn1VNf7g8NEjgVeCZapYcbfT08';
-var npsUrl = 'https://developer.nps.gov/api/v1';
-var stateName = 'FL';
 
-// Modal
+//Modal
 $(document).ready(function () {
-  $(".modal").modal();
+    if ($("body").is('#index')) {
+        $(".modal").modal();
+    }
 });
 
 
 // Modal Selectors
+$(document).ready(function () {
+    if ($("body").is('#index')) {
+        $('select').formSelect();
+    }
+});
+
+// Datepicker widget
 $(document).ready(function(){
-    $('select').formSelect();
+    $('.datepicker').datepicker();
   });
 
-
-// // NPS Api
-// var queryURL = npsUrl + '/trails?stateCode=' + stateName + "&api_key=" + npsKey;
-// fetch(queryURL)
-
-// // Call response in console
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         console.log(data);
-//     })
 
 // Google Places Api
 let apiKey = '3d01b4e3041172e8bb324d16eafbdd67';
@@ -67,7 +61,3 @@ function getPlacesApi(lat, lon) {
         });
 }
 
-// Datepicker widget
-$(document).ready(function(){
-    $('.datepicker').datepicker();
-  });

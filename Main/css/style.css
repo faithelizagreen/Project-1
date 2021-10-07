@@ -1,29 +1,3 @@
-/* Results Page */
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
-#map {
-    height: 900px;
-    width: 100%;
-    margin-top: 8px;
-}
-
-.git-link:hover {
-    color: #2e7d32;
-}
-
-.weather-card {
-  border: none;
-}
-
-
 /* Homepage */
 .nav-wrapper{
   background-color: rgb(82, 101, 77);
@@ -91,4 +65,56 @@ margin-left: 10px;
 
 .page-footer {
  background-color: rgb(82, 101, 77);
+}
+
+
+/* Results Page */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+#map {
+    height: 900px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.git-link:hover {
+    color: #2e7d32;
+}
+
+.weather-card {
+  border: none;
+}
+
+.previous-searches {
+  background-color: rgb(142, 173, 133);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.previous-searches:hover {
+  background-color: rgb(82, 101, 77);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#clear-button {
+  color: rgb(201, 201, 201);
+}
+
+#clear-button:hover {
+  color: black;
+  transition: 0.3s;
+  cursor: pointer;
 }
