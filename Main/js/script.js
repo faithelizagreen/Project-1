@@ -1,5 +1,6 @@
 var npsKey = 'jWkeYbbVnmq03Oy2hhCYC6rXV7GUQlVtL46HooYG';
-var rootUrl = 'https://developer.nps.gov/api/v1';
+var googleKey = 'AIzaSyBs094KFbn1VNf7g8NEjgVeCZapYcbfT08';
+var npsUrl = 'https://developer.nps.gov/api/v1';
 var stateName = 'FL';
 
 // Modal
@@ -14,50 +15,59 @@ $(document).ready(function(){
   });
 
 
-// NPS Api
-var queryURL = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateName + "&api_key=" + npsKey;
-fetch(queryURL)
+// // NPS Api
+// var queryURL = npsUrl + '/trails?stateCode=' + stateName + "&api_key=" + npsKey;
+// fetch(queryURL)
 
-// resultspage
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data);
-    })
+// // Call response in console
+//     .then(function (response) {
+//         return response.json();
+//     })
+//     .then(function (data) {
+//         console.log(data);
+//     })
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: {lat: -34.397, lng: 150.644 },
-        zoom: 8,
-    });
+// Google Places Api
+let apiKey = '3d01b4e3041172e8bb324d16eafbdd67';
+let rootUrl = 'https://api.openweathermap.org';
+
+function getLatLon() {
+    var city = "Orlando"
+
+    var queryURL = rootUrl + '/geo/1.0/direct?q=' + city + '&limit=5&units=imperial&appid=' + apiKey;
+    console.log(city);
+
+    // Fetch's latitude and longitude
+    fetch(queryURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data)
+            getPlacesApi(data[0].lat, data[0].lon);
+        })
 }
 
+function getPlacesApi(lat, lon) {
+    let googleKey = "AIzaSyBs094KFbn1VNf7g8NEjgVeCZapYcbfT08";
+    let mapUrl =
+        'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + lat + ',' + lon + '&radius=50000&type=park&keyword=hiking&key=' +
+        googleKey;
 
+    fetch("https://cors-anywhere.herokuapp.com/" + mapUrl, {
+            method: "GET",
+            dataType: "jsonp",
+            headers: {},
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data)
+        });
+}
 
-// Get the modal
-// var modal = document.getElementById("myModal");
-
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks the button, open the modal 
-// btn.onclick = function() {
-//     modal.style.display = "block";
-// }
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//     modal.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// }
-
+// Datepicker widget
+$(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
