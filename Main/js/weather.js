@@ -1,14 +1,15 @@
 //API key for weather
-var APIKey = "6da21109c2a2f51f89c7bb1442e09e36";
-var forecastWeather = $('#forecast')
+let APIKey = "6da21109c2a2f51f89c7bb1442e09e36";
 
-// Display the curent and future weather to the user after grabing the city form the input text box.
-city = localStorage.getItem("savedCity") || "";
+// Display the curent and future weather to the user after grabbing the city form the input text box.
+let savedCities = JSON.parse(localStorage.getItem("savedCity"));
+let city = savedCities[savedCities.length-1].city;
 currentWeather(city);
 console.log("city", city);
 
+// Gets current weather
 function currentWeather(city) {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appID=" + APIKey;
+    queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appID=" + APIKey;
     $.ajax({
         url: queryURL,
         method: "GET",
@@ -16,7 +17,7 @@ function currentWeather(city) {
         forecast(response.id);
     });
 }
-
+// Displays forecast for 5 days
 function forecast(cityid) {
     var dayover = false;
     var queryforcastURL =

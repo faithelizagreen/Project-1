@@ -5,10 +5,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Take A Hike</title>
-
+  <!-- Favicon -->
   <link rel="shortcut icon" type="image/jpg" href="./Assets/images/mountain.png" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
+  <!-- Import reset css -->
+  <link rel="stylesheet" href="css/reset.css"/>
+  <!--Import materialize css -->
   <link type="text/css" rel="stylesheet" href="./css/materialize/css/materialize.css" media="screen,projection" />
   <!-- Import custom css -->
   <link rel="stylesheet" href="css/style.css" />
@@ -18,11 +20,11 @@
 
   <!-- Navbar -->
   <div class="navbar-fixed">
-		<nav>
-			<div>
-				<div class="nav-wrapper">
-					<a href="#Main" class="logo">
-					<img src="./Assets/images/logo4.png" alt="take a hike logo">
+    <nav>
+      <div>
+        <div class="nav-wrapper">
+          <a href="#Main" class="logo">
+            <img src="./Assets/images/logo4.png" alt="take a hike logo">
           </a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
           </ul>
@@ -33,7 +35,7 @@
 
   <!-- Jumbotron/Hero -->
   <div class="col s12">
-    <section id=jumbotron" class="jumbotron">
+    <section class="jumbotron">
       <img class="hero responsive-img" src="Assets/images/heroimage.jpeg">
       <!-- Modal Trigger -->
       <div class="center buttons-wrapper">
@@ -54,30 +56,25 @@
           <div class="row">
             <form class="col s12">
               <div class="input-field col s12">
-                <input id="city-and-state" type="text" class="validate"></input>
-                <label for="location">City and State </label>
+                <input id="city-and-state" type="text" class="validate" placeholder="City and State"></input>
+                <!-- <label for="location">City and State </label> -->
               </div>
-              <div class="row">
-                  <form class="col s12">
-                      <div class="input-field col s12">
-                          <input id="city-and-state" type="text" class="validate"></input>
-                          <label for="location">City and State </label>
-                      </div>
-                      <div class="col s6">
-                        <!-- Choose the day you'd like to hike -->
-                        <input type="date" class="datepicker custom-datepicker" placeholder="Select the first day of your hike">
-                      </div>
-                  </form>
+              <div class="col s6">
+                <!-- Choose the day you'd like to hike -->
+                <input type="date" class="datepicker custom-datepicker" placeholder="Select the first day of your hike">
               </div>
             </form>
           </div>
-          <a href="searchresults.html"><button id="submit-button"
-              class="submit-btn modal-button waves-effect btn">Submit</button></a>
+          </form>
         </div>
+        <a href="searchresults.html"><button id="submit-button"
+            class="submit-btn modal-button waves-effect btn">Submit</button></a>
       </div>
-    </section>
+  </div>
+  </section>
   </div>
 
+  <!-- About the app section -->
   <section id="app-info" class="container">
     <div class="row">
       <img class="aboutImg col s6 z-depth" src="Assets/images/frontpageimage.jpeg">
@@ -97,6 +94,8 @@
     </div>
   </section>
 
+
+  <!-- Footer with github links -->
   <footer class="page-footer z-depth-2">
     <div class="container">
       <div class="row">
@@ -124,23 +123,14 @@
       </div>
   </footer>
 
+
   <!-- Compressed JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="./css/materialize/js/materialize.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="js/map.js"></script>
+  <script src="js/weather.js"></script>
 
-<!-- Custom Javascript -->
-
-        <!-- Compressed JavaScript -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="./css/materialize/js/materialize.js"></script>
-        <!--<script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs094KFbn1VNf7g8NEjgVeCZapYcbfT08&callback=initMap">
-    </script>-->
-        <!-- <script src="js/script.js"></script> -->
-        <script src="js/map.js"></script>
-        <script src="./js/resultsscript.js"></script>
-        <script src="./js/index.js"></script>
-       <!-- <script src="./js/resultsscript.js"></script> -->
 </body>
 
-</html>
+</html> -->
