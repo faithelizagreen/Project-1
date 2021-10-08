@@ -132,9 +132,12 @@ function clearCities() {
 }
 // Initializes map on page based on desired location
 function initMap(lat, lon) {
-    let cord = new google.maps.LatLng(lat, lon)
+    let latitude = parseFloat(lat)
+    let longitude = parseFloat(lon)
+    console.log(latitude, longitude)
+    // let cord = new google.maps.LatLng(lat, lon)
     map = new google.maps.Map(document.getElementById("map"), {
-        center: cord,
+        center: {lat: latitude, lng: longitude},
         zoom: 11,
     });
 }
