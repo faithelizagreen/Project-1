@@ -8,11 +8,13 @@ body {
 main {
   flex: 1 0 auto;
 }
+
 #map {
     height: 700px;
     width: 80%;
     margin-top: 8px;
 }
+
 .myBox {
   border: none;
   padding: 2px;
