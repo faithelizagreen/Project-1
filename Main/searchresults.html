@@ -29,25 +29,7 @@
                 <div id="search-results">
                     <h3>Search Results</h3>
                 </div>
-
-<!--                 <div class="card small hoverable">
-                    <div class="card-image">
-                        <img src="https://www.arborday.org/images/hero/medium/hero-pine-forest-morning-light.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title">Trail Name</span>
-                        <p>Trail Location / Address </p>
-                    </div>
-                </div>
-                <div class="card small hoverable">
-                    <div class="card-image">
-                        <img src="https://www.arborday.org/images/hero/medium/hero-pine-forest-morning-light.jpg">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title">Trail Name</span>
-                        <p>Trail Location / Address</p>
-                    </div>
-                </div> -->
+              
 
                 <div id="previous-search">
                     <h5 class="section">Previous Searches</h5>
@@ -65,80 +47,56 @@
     </div>
 
     <!-- Weather Cards -->
-    <section id="local-weather" class="col s12 brown darken-3">
-        <div id="forecast-wrapper" class="col s8 container">
+    <section id="local-weather" class="col s12 gray darken-3">
+        <div id="forecast-wrapper" class="col s12 container">
             <div class="row">
-
-                <!-- Weather Header -->
+ <!-- Weather Header -->
                 <div id="weather-header">
                     <h3 class="white-text">Local Weather</h3>
                 </div>
-
                 <!-- Cards -->
                 <div class="col s2">
-                    <div class="card-panel green lighten-4 weather-card">
-                      
-                        <h5>Day 1 <i class="forecast">cloud</i></h5>
-                        <span id="fDate0"></span>
-                        <span id="fTemp0">Temperature: </span>
-                        <span id="fHumidity0">Humidity: </span><br>
-                        <span id="wind-speed0">Wind Speed: </span><br>
-                        <span id="uv-index0">UV Index: </span>
+                    <div class="card-panel weather-card">
+                        <h5><span id="fDate0"></span></h5>
+                        <span id="fImg0"></span>
+                        <p>Temp: <span id="fTemp0"></span></p>
+                        <p>Humidity: <span id="fHumidity0"></span></p>
                     </div>
                 </div>
                 <div class="col s2 ">
-                    <div class="card-panel green lighten-4 weather-card ">
-                        <h5 class="city-name mb-1 mt-2 bolder ">Day 2 <i class="material-icons ">cloud</i></h5>
-                        <span id="fDate1"></span>
-                        <span id="fTemp1">Temperature: </span>
-                        <span id="fTemp1">Temperature: </span>
-                        <span id="fHumidity1">Humidity: </span><br>
-                        <span id="wind-speed1">Wind Speed: </span><br>
-                        <span id="uv-index1">UV Index: </span>
+                        <div class="card-panel weather-card">
+                            <h5><span id="fDate1"></span></h5>
+                            <span id="fImg1"></span>
+                            <p>Temp: <span id="fTemp1"></span></p>
+                            <p>Humidity: <span id="fHumidity1"></span></p>
+                        </div>
+                </div>
+                <div class="col s2 ">
+                    <div class="card-panel weather-card">
+                        <h5><span id="fDate2"></span></h5>
+                        <span id="fImg2"></span>
+                        <p>Temp: <span id="fTemp2"></span></p>
+                        <p>Humidity: <span id="fHumidity2"></span></p>
+                    </div>
+                   
+                </div>
+                <div class="col s2 ">
+                    <div class="card-panel weather-card">
+                        <h5><span id="fDate3"></span></h5>
+                        <span id="fImg3"></span>
+                        <p>Temp: <span id="fTemp3"></span></p>
+                        <p>Humidity: <span id="fHumidity3"></span></p>
                     </div>
                 </div>
                 <div class="col s2 ">
-                    <div class="card-panel green lighten-4 weather-card ">
-                        <h5 class="black-text ">Day 3 <i class="material-icons ">cloud</i></h5>
-                        <span id="fDate2"></span>
-                        <span id="fTemp2">Temperature: </span>
-                        <span id="fTemp2">Temperature: </span>
-                        <span id="fHumidity2">Humidity: </span><br>
-                        <span id="wind-speed2">Wind Speed: </span><br>
-                        <span id="uv-index2">UV Index: </span>
+                    <div class="card-panel z-index-4 weather-card">
+                        <h5><span id="fDate4"></span></h5>
+                        <span id="fImg4"></span>
+                        <p>Temp: <span id="fTemp4"></span></p>
+                        <p>Humidity: <span id="fHumidity4"></span></p>
                     </div>
                 </div>
-                <div class="col s2 ">
-                    <div class="card-panel green lighten-4 weather-card ">
-                        <h5 class="black-text ">Day 4 <i class="material-icons ">cloud</i></h5>
-                        <span id="fDate3"></span>
-                        <span id="fTemp3">Temperature: </span>
-                        <span id="fTemp3">Temperature: </span>
-                        <span id="fHumidity3">Humidity: </span><br>
-                        <span id="wind-speed3">Wind Speed: </span><br>
-                        <span id="iv-index3">UV Index: </span>
-                    </div>
-                </div>
-                <div class="col s2 ">
-                    <div class="card-panel green lighten-4 weather-card ">
-                        <h5 class="black-text ">Day 5 <i class="material-icons ">cloud</i></h5>
-                        <span id="fDate4"></span>
-                        <span id="fTemp4">Temperature: </span>
-                        <span id="fTemp4">Temperature: </span>
-                        <span id="fHumidity4">Humidity: </span><br>
-                        <span id="wind-speed4">Wind Speed: </span><br>
-                        <span id="iv-index4">UV Index: </span>
-                    </div>
-                </div>
-                <div class="col s2 ">
-                    <div class="card-panel green lighten-4 weather-card ">
-                        <h5 class="black-text ">Day 6 <i class="material-icons ">cloud</i></h5>
-                        <span id="fDate5"></span>
-                        <span id="fTemp5">Temperature: </span>
-                        <span id="fTemp5">Temperature: </span>
-                        <span id="fHumidity5">Humidity: </span><br>
-                        <span id="wind-speed5">Wind Speed: </span><br>
-                        <span id="iv-index5">UV Index: </span>
+             
 
                     </div>
                 </div>
