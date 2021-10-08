@@ -68,31 +68,31 @@ function getPlaceDetails(placeId) {
             var searchResults = $(`
             <div class="row">
                 <div class="col s12">
-                    <div class="card blue-grey darken-1">                            <div class="card-content white-text">
-                        <span class="card-title"><a href=${data.result.url}>${data.result.name}</a></span>
-                        <p>${data.result.formatted_address}</p>
+                    <div class="card blue-grey darken-1">                            
+                        <div class="card-content white-text">
+                            <span class="card-title"><a href=${data.result.url}>${data.result.name}</a></span>
+                            <p>${data.result.formatted_address}</p>
+                        </div>
                     </div>
                 </div>
             </div>
             `);
-            // previousSearch.attr("class", "previous-cities");
-            // previousSearch.text(element);
             $('#search-results').append(searchResults);
         })
 }
 
 
-if (submitBtn !== null) {
-    submitBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        console.log('#submit-button')
-        locationInput = document.querySelector('#city-and-state')
-        let city = locationInput.value.trim();
+// if (submitBtn !== null) {
+//     submitBtn.addEventListener("click", function (event) {
+//         event.preventDefault();
+//         console.log('#submit-button')
+//         locationInput = document.querySelector('#city-and-state')
+//         let city = locationInput.value.trim();
 
-        localStorage.setItem("savedCity", city);
-        window.open("searchresults.html", "_self")
-    })
-}
+//         localStorage.setItem("savedCity", city);
+//         window.open("searchresults.html", "_self")
+//     })
+// }
 
 $(document).ready(function () {
     if ($("body").is("#searchresults")) {

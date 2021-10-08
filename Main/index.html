@@ -57,9 +57,17 @@
                 <input id="city-and-state" type="text" class="validate"></input>
                 <label for="location">City and State </label>
               </div>
-              <div class="col s6">
-                <!-- Choose the day you'd like to hike -->
-                <input type="text" class="datepicker custom-datepicker" placeholder="Select the first day of your hike">
+              <div class="row">
+                  <form class="col s12">
+                      <div class="input-field col s12">
+                          <input id="city-and-state" type="text" class="validate"></input>
+                          <label for="location">City and State </label>
+                      </div>
+                      <div class="col s6">
+                        <!-- Choose the day you'd like to hike -->
+                        <input type="date" class="datepicker custom-datepicker" placeholder="Select the first day of your hike">
+                      </div>
+                  </form>
               </div>
             </form>
           </div>
@@ -122,10 +130,17 @@
 
 <!-- Custom Javascript -->
 
-  <!-- <script src="js/script.js"></script> -->
-  <script src="js/map.js"></script>
-  <script src="./js/index.js"></script>
-  <!-- <script src="./js/resultsscript.js"></script> -->
+        <!-- Compressed JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="./css/materialize/js/materialize.js"></script>
+        <!--<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs094KFbn1VNf7g8NEjgVeCZapYcbfT08&callback=initMap">
+    </script>-->
+        <!-- <script src="js/script.js"></script> -->
+        <script src="js/map.js"></script>
+        <script src="./js/resultsscript.js"></script>
+        <script src="./js/index.js"></script>
+       <!-- <script src="./js/resultsscript.js"></script> -->
 </body>
 
 </html>
