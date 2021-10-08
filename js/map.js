@@ -45,7 +45,7 @@ function getPlacesApi(lat, lon) {
             return response.json();
         })
         .then(function (data) {
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 20; i++) {
                 getPlaceDetails(data.results[i].place_id)
             }
             data.results.forEach(place => {
@@ -73,19 +73,19 @@ function getPlaceDetails(placeId) {
         })
         .then(function (data) {
             console.log(data)
-            var searchResults = $(`
-            <div class="row">
-                <div class="col s12">
-                    <div class="card blue-grey darken-1">                            
-                        <div class="card-content white-text">
-                            <span class="card-title"><a href=${data.result.url}>${data.result.name}</a></span>
-                            <p>${data.result.formatted_address}</p>
+                let searchResults = $(`
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card blue-grey darken-1">                            
+                            <div class="card-content white-text">
+                                <span class="card-title"><a href=${data.result.url}>${data.result.name}</a></span>
+                                <p>${data.result.formatted_address}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            `);
-            $('#search-results').append(searchResults);
+                `);
+                $('#search-results').append(searchResults);
         })
 }
 

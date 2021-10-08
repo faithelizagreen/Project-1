@@ -8,11 +8,43 @@ body {
 main {
   flex: 1 0 auto;
 }
+
 #map {
-    height: 700px;
-    width: 100%;
-    margin-top: 8px;
+
+  height: 700px;
+  width: 100%;
+  margin-top: 8px;
 }
+
+#map-wrapper {
+  margin-top: 95px;
+}
+
+.myBox {
+  border: none;
+  padding: 2px;
+  font: 15px/20px sans-serif;
+  width: 400px;
+  height: 550px;
+  overflow: scroll;
+  }
+  
+  /* Scrollbar styles */
+  ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+  border: 1px solid rgb(142, 173, 133);
+  border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+  background: rgb(142, 173, 133);  
+  border-radius: 10px;
+  }
+
 
 .git-link:hover {
     color: #2e7d32;
@@ -41,23 +73,25 @@ main {
   transform: translateY(-60%);
 }
 
-#hero-button {
-  font-size: 1vw;
+.hero {
+  background-image: url("../assets/images/heroimage_new.jpg");
+  background-repeat: no-repeat;
+  background-position: 75% 25%;
+  background-size: cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
+#hero-button {
+  font-size: 15px;
+}
 
 .btn-large {
   margin: 0;
   border-radius: 30px;
   width: 200px;
-}
-
-.buttons-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translate(0px, -300px);
 }
 
 .modal-size {
@@ -84,6 +118,7 @@ main {
 
 .submit-btn {
   background-color: #4e342e;
+  margin-left: 20px;
 }
 
 .submit-btn:hover {
@@ -98,6 +133,7 @@ margin-left: 10px;
   margin-bottom: 40px;
   margin-right: 20px;
 }
+
 
 #local-weather {
   background-image: url("../assets/images/heroimage.jpeg");
@@ -123,7 +159,7 @@ main {
 #map {
     height: 900px;
     width: 100%;
-    margin-top: 8px;
+    margin-top: 30px;
 }
 
 .git-link:hover {
