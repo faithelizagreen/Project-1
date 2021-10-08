@@ -20,6 +20,10 @@ main {
   margin-top: 95px;
 }
 
+#map-wrapper {
+  margin-top: 15px;
+}
+
 .myBox {
   border: none;
   padding: 2px;
