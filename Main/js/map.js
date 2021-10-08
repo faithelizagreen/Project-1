@@ -38,13 +38,11 @@ function getPlacesApi(lat, lon) {
             return response.json();
         })
         .then(function (data) {
-            for (let i = 0; i < data.results.length; i++) {
-                console.log(data.results[i].name)
-                renderPlaces(data[0].results)
+            for (let i = 0; i < 5; i++) {
+                getPlaceDetails(data.results[i].place_id)
             }
             data.results.forEach(place => {
                 console.log(place)
-
                 new google.maps.Marker({
                     position: place.geometry.location,
                     map,
@@ -55,8 +53,32 @@ function getPlacesApi(lat, lon) {
         });
 }
 
-function renderPlaces() {
-    
+function getPlaceDetails(placeId) {
+    let googleKey = "AIzaSyBs094KFbn1VNf7g8NEjgVeCZapYcbfT08";
+    let detailsUrl =
+        'https://maps.googleapis.com/maps/api/place/details/json?place_id=' + placeId + '&key=' + googleKey;
+
+    // Fetch's latitude and longitude
+    fetch("https://cors-anywhere.herokuapp.com/" + detailsUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data)
+            var searchResults = $(`
+            <div class="row">
+                <div class="col s12">
+                    <div class="card blue-grey darken-1">                            <div class="card-content white-text">
+                        <span class="card-title"><a href=${data.result.url}>${data.result.name}</a></span>
+                        <p>${data.result.formatted_address}</p>
+                    </div>
+                </div>
+            </div>
+            `);
+            // previousSearch.attr("class", "previous-cities");
+            // previousSearch.text(element);
+            $('#search-results').append(searchResults);
+        })
 }
 
 
