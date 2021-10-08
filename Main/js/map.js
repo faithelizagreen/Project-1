@@ -1,25 +1,26 @@
-//let googleKey = '3d01b4e3041172e8bb324d16eafbdd67';
-//let rootUrl = 'https://api.openweathermap.org';
-//let submitBtn = document.getElementById('submit-button');
+let apiKey = '3d01b4e3041172e8bb324d16eafbdd67';
+let rootUrl = 'https://api.openweathermap.org';
+let submitBtn = document.getElementById('submit-button');
+let map;
 
-// function getLatLon() {
-//     // locationInput = document.querySelector('#city-and-state')
-//     // let city = locationInput.value.trim();
-//     let city = localStorage.getItem("savedCity");
+function getLatLon() {
+    let city = localStorage.getItem("savedCity");
 
-//     let queryURL = rootUrl + '/geo/1.0/direct?q=' + city + '&limit=5&units=imperial&appid=' + apiKey;
-//     console.log(city);
+    let queryURL = rootUrl + '/geo/1.0/direct?q=' + city + '&limit=5&units=imperial&appid=' + apiKey;
+    console.log(city);
 
-//     // Fetch's latitude and longitude
-//     fetch(queryURL)
-//         .then(function (response) {
-//             return response.json();
-//         })
-//         .then(function (data) {
-//             console.log(data)
-//             getPlacesApi(data[0].lat, data[0].lon);
-//         })
-// }
+    // Fetch's latitude and longitude
+    fetch(queryURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data)
+            initMap(data[0].lat, data[0].lon);
+            getPlacesApi(data[0].lat, data[0].lon);
+
+        })
+}
 
 function getPlacesApi(lat, lon) {
     let googleKey = "AIzaSyBs094KFbn1VNf7g8NEjgVeCZapYcbfT08";
@@ -33,25 +34,53 @@ function getPlacesApi(lat, lon) {
             headers: {},
         })
         .then(function (response) {
+            console.log(response);
             return response.json();
         })
         .then(function (data) {
-            for(let i = 0; i < data.results.length; i++) {
-                console.log(data.results[i].name)
-
-                // <div class="card small hoverable">
-                //   <div class="card-image">
-                //     <img src="https://www.arborday.org/images/hero/medium/hero-pine-forest-morning-light.jpg">
-                //   </div>
-                //   <div class="card-content">
-                //     <span class="card-title">Trail Name</span>
-                //     <p>Trail Location / Address </p>
-                //   </div>
-                // </div>
+            for (let i = 0; i < 5; i++) {
+                getPlaceDetails(data.results[i].place_id)
             }
+            data.results.forEach(place => {
+                console.log(place)
+                new google.maps.Marker({
+                    position: place.geometry.location,
+                    map,
+                    title: place.name,
+                });
+            });
 
         });
 }
+
+function getPlaceDetails(placeId) {
+    let googleKey = "AIzaSyBs094KFbn1VNf7g8NEjgVeCZapYcbfT08";
+    let detailsUrl =
+        'https://maps.googleapis.com/maps/api/place/details/json?place_id=' + placeId + '&key=' + googleKey;
+
+    // Fetch's latitude and longitude
+    fetch("https://cors-anywhere.herokuapp.com/" + detailsUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data)
+            var searchResults = $(`
+            <div class="row">
+                <div class="col s12">
+                    <div class="card blue-grey darken-1">                            
+                        <div class="card-content white-text">
+                            <span class="card-title"><a href=${data.result.url}>${data.result.name}</a></span>
+                            <p>${data.result.formatted_address}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `);
+            $('#search-results').append(searchResults);
+        })
+}
+
 
 // if (submitBtn !== null) {
 //     submitBtn.addEventListener("click", function (event) {
@@ -68,7 +97,6 @@ function getPlacesApi(lat, lon) {
 $(document).ready(function () {
     if ($("body").is("#searchresults")) {
         getLatLon();
-        getPlacesApi();
     }
 })
 
@@ -87,14 +115,10 @@ $(document).ready(function () {
     }
 });
 
-
-
-// function initMap() {
-//     map = new google.maps.Map(document.getElementById("map"), {
-//         center: {
-//             lat: 
-//             lng: 150.644,
-//         },
-//         zoom: 8,
-//     });
-// }
+function initMap(lat, lon) {
+    let cord = new google.maps.LatLng(lat, lon)
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: cord,
+        zoom: 11,
+    });
+}

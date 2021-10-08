@@ -1,15 +1,51 @@
+/* Results Page */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+#map {
+    height: 700px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.git-link:hover {
+    color: #2e7d32;
+}
+
+.weather-card {
+  border: none;
+}
+
+
 /* Homepage */
 .nav-wrapper{
   background-color: rgb(82, 101, 77);
+}
+
+.logo {
+  display: inline-block;
+  height: 100%;
+}
+
+.logo>img {
+  position: absolute;
+  top: 60%;
+  height: 70%;
+  margin-left: 10px;
+  transform: translateY(-60%);
 }
 
 #hero-button {
   font-size: 1vw;
 }
 
-.container {
-  position: relative;
-}
+
 
 .btn-large {
   margin: 0;
@@ -61,6 +97,11 @@ margin-left: 10px;
 .aboutImg {
   margin-bottom: 40px;
   margin-right: 20px;
+}
+
+#local-weather {
+  background-image: url("../Assets/images/heroimage.jpeg");
+  background-size:cover
 }
 
 .page-footer {
